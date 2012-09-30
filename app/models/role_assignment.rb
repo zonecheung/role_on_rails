@@ -18,7 +18,7 @@ class RoleAssignment < ActiveRecord::Base
       value = Rails.cache.read(key)
 
       if value.nil?
-        role_ids = Role.ids_for(s)
+        role_ids = user.role_klass.ids_for(s)
         value = !! (role_ids.present? && (
                       context.nil? ?
                         user.role_assignments.find_all_by_role_id_and_context_type_and_context_id(role_ids, nil, nil) :
