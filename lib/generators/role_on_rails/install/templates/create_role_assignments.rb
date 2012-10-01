@@ -1,4 +1,4 @@
-class RoleOnRailsMigration < ActiveRecord::Migration
+class CreateRoleAssignments < ActiveRecord::Migration
 
   def self.up
     create_table :role_assignments do |t|
