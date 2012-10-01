@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'rails/generators/migration'
 
-class ActsAsVoteableMigrationGenerator < Rails::Generators::Base
+class RoleOnRailsMigrationGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
   def self.source_root
     @source_root ||= File.join(File.dirname(__FILE__), 'templates')
