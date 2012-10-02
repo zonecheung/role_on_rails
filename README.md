@@ -38,13 +38,11 @@ Methods
 -------
 
 The following methods will be added to your `Role` class:
-
   Role.ids_for([:teacher, :student])  # => [3,4]
   Role.list                           # => Array of defined roles.
   Role.assignable_list                # => Array of roles with assignable = true.
   
 And in your `User` class:
-
   user = User.find(123)
   course = Course.find(456)
   user.add_role(:teacher, course)
