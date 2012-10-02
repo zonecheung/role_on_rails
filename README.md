@@ -7,12 +7,15 @@ Installation
 ------------
 
 Add the following to your Gemfile:
+
     gem 'role_on_rails', :git => 'http://github.com/zonecheung/role_on_rails.git'
   
 Then run the generator to create migration files:
+
     rails g role_on_rails:install
 
 Define the roles by adding `app/models/role.rb`:
+
     class Role
       include RoleOnRails::Role
       
@@ -29,6 +32,7 @@ Define the roles by adding `app/models/role.rb`:
     end
 
 And add a line in your `app/models/user.rb`:
+
     class User < ActiveRecord::Base
       role_subject
     end
@@ -38,13 +42,16 @@ Methods
 -------
 
 The following methods will be added to your `Role` class:
+
     Role.ids_for([:teacher, :student])  # => [3,4]
     Role.list                           # => Array of defined roles.
     Role.assignable_list                # => Array of roles with assignable = true.
   
 And in your `User` class:
+
     user = User.find(123)
     course = Course.find(456)
+
     user.add_role(:teacher, course)
     user.has_role?(:teacher)            # => false
     user.has_role?(:teacher, course)    # => true
